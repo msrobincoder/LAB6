@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 6</title>
+
+	</head>
+	<body>
+   
+    <script>
+      /*  CMSY 172 
+
+          student object methods:
+           - displayMajor method
+           - setMajor method
+           - getMajor method
+
+      */
+
+      //use to insert line breaks after display statements
+      var linebreak = "<br><br>";
+            
+      //Create and initialize the student object
+      var student = {
+        firstName : "Monique",
+        lastName: "Robinson",
+        major: "English",
+        gpa: 0,
+        prevMajor: "none"
+        
+        //Method to display the student object's major property 
+        displayMajor : function(){
+          document.write("Current major: " + this.major + linebreak);
+        }, 
+        
+        //Method to return the value of the student object's major
+        getMajor : function(){
+          return this.major;
+        },
+        
+        //Method to set the student object's major property
+        setMajor : function (newMajor) { 
+          if (newMajor != " ") {
+            this.major = newMajor;
+          }
+        }
+        
+      }; //end object
+
+      //Begin processing
+
+     
+    </script>
+    
+	</body>
+</html>
+
+
