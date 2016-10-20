@@ -8,7 +8,7 @@
 	<body>
    
     <script>
-      /*  CMSY 172 
+      /*  CMSY 172 - Programmer: Monique Robinson
 
           student object methods:
            - displayMajor method
@@ -21,11 +21,12 @@
       var linebreak = "<br><br>";
             
       //Create and initialize the student object
+	  //student object consists of firstName, lastName,major,GPA,prevMajor
       var student = {
         firstName : "Monique",
         lastName: "Robinson",
         major: "English",
-        gpa: 0,
+        GPA: 0,
         prevMajor: "none"
         
         //Method to display the student object's major property 
@@ -40,8 +41,11 @@
         
         //Method to set the student object's major property
         setMajor : function (newMajor) { 
-          if (newMajor != " ") {
-            this.major = newMajor;
+		  this.prevMajor = this.Major;
+		  this.Major = newMajor;
+          //if (newMajor != " ") {
+            //this.major = newMajor;
+			console.log("This is previous major" + this.prevMajor;
           }
         }
         
