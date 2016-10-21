@@ -8,7 +8,7 @@
 	<body>
    
     <script>
-      /*  CMSY 172 - Programmer: Monique Robinson
+      /*  CMSY 172 - Lab 6 Objects and Methods Monique Robinson - 20 October 2016
 
           student object methods:
            - displayMajor method
@@ -16,6 +16,8 @@
            - getMajor method
 
       */
+     /* lab description: This lab will allow modification of  a student's record. Properties include: first name, last name, major, grade point average, and previous major
+     */
 
       //use to insert line breaks after display statements
       var linebreak = "<br><br>";
@@ -23,39 +25,61 @@
       //Create and initialize the student object
 	  //student object consists of firstName, lastName,major,GPA,prevMajor
       var student = {
-        firstName : "Monique",
-        lastName: "Robinson",
+        firstName : "Janey",
+        lastName: "Glorious",
         major: "English",
         GPA: 0,
-        prevMajor: "none"
+        prevMajor: "none",
         
         //Method to display the student object's major property 
-        displayMajor : function(){
-          document.write("Current major: " + this.major + linebreak);
-        }, 
+          displayMajor : function(){
+            document.write("Current major: " + this.major + linebreak);
+          }, 
         
         //Method to return the value of the student object's major
-        getMajor : function(){
-          return this.major;
-        },
+          getMajor : function(){
+            return this.major;
+          },
         
-        //Method to set the student object's major property
-        setMajor : function (newMajor) { 
-		  this.prevMajor = this.Major;
-		  this.Major = newMajor;
-          //if (newMajor != " ") {
-            //this.major = newMajor;
-			console.log("This is previous major" + this.prevMajor;
+        //Method to set the student object's major property. 
+          setMajor : function (newMajor) { 
+		
+            if (newMajor != " ") {
+              this.prevMajor = this.major;
+              this.major = newMajor;
+            }
+          },
+        //Method to set the student's GPA. Takes a numeric variable as parameter
+        
+          setGPA: function(grade) {
+          
+              this.GPA = grade;
+          },
+        
+
+        //Method to display the student record
+          displayStudentRecord : function(){
+            document.write("Student: " + this.firstName + " " + this.lastName + linebreak);
+            document.write("Current major: " + this.major + linebreak);
+            document.write("Previous major: " + this.prevMajor + linebreak);
+            document.write("GPA: " + this.GPA + linebreak);
           }
-        }
-        
+
       }; //end object
 
       //Begin processing
+       /* Display student's record prior to processing.
+       */
+           student.displayStudentRecord();
 
-     
+           //update student major and gpa properties
+
+           student.setMajor("webDevelopment");
+           student.setGPA(3.5);
+          //display updated record to confirm that changes took place properly.
+           student.displayStudentRecord();
+           
     </script>
-    
 	</body>
 </html>
 
